@@ -40,6 +40,14 @@ class Helper {
   // method refers to the http methods (GET, POST, etc.)
   // urlParams refers to the venues on Foursquare
   static simpleFetch(endPoint, method, urlParams) {
+    let requestData = {
+      method,
+      headers: Helper.headers()
+    };
 
+    return fetch(
+      `${Helper.baseURL()}${endPoint}?${Helper.auth()}&${Helper.urlBuilder(urlParams)}`,
+      requestData)
+      .then(res => res.json());
   }
 }
