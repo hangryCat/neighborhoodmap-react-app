@@ -19,4 +19,10 @@ class Helper {
       .map(key => `${key}=${clientKeys[key]}`)
       .join('&');
   }
+
+  static headers() {
+    return {
+      Accept: "application/json"
+    };
+  }
 }
