@@ -4,4 +4,12 @@ class Helper {
   static baseURL() {
     return "http://api.foursquare.com/v2";
   }
+
+  static auth() {
+    const keys = {
+      client_id: 'HGDYIWSS0FUEOPKOBZISUXYROHPNASRXN54EJDVE0XAQZO12',
+      client_secret: 'JXZYMNLQADTJJDYQDYDAQMAOBIOFFT01P0YLHH32SWBRUFX1',
+      version_parameter: '20181005'
+    }
+  }
 }
