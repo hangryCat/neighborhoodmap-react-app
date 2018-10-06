@@ -20,6 +20,17 @@ class Helper {
       .join('&');
   }
 
+  static urlBuilder(urlParams) {
+    // Error control: if the url parameter is empty, then return an empty string
+    if(!urlParams) {
+      return '';
+    }
+    // Otherwise, return the following as a single string
+    return Object.keys(urlParams)
+      .map(key => `${key}=${urlParams[key]}`)
+      .join('&');
+  }
+
   static headers() {
     return {
       Accept: "application/json"
