@@ -6,10 +6,17 @@ class Helper {
   }
 
   static auth() {
-    const keys = {
+    const clientKeys = {
       client_id: 'HGDYIWSS0FUEOPKOBZISUXYROHPNASRXN54EJDVE0XAQZO12',
       client_secret: 'JXZYMNLQADTJJDYQDYDAQMAOBIOFFT01P0YLHH32SWBRUFX1',
       version_parameter: '20181005'
-    }
+    };
+    // Object.keys(keys) returns an array with each value turned into strings
+    // The map() returns an array with the property names' values into strings
+    // The join() concatenate the array
+    // Output:  "client_id=HGDYIWSS0FUEOPKOBZISUXYROHPNASRXN54EJDVE0XAQZO12&client_secret=JXZYMNLQADTJJDYQDYDAQMAOBIOFFT01P0YLHH32SWBRUFX1&version_parameter=20181005"
+    return Object.keys(clientKeys)
+      .map(key => `${key}=${clientKeys[key]}`)
+      .join('&');
   }
 }
