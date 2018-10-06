@@ -25,4 +25,10 @@ class Helper {
       Accept: "application/json"
     };
   }
+  // endPoint refers to the url that comes after the baseURL() http:.../v2...
+  // method refers to the http methods (GET, POST, etc.)
+  // urlParams refers to the venues on Foursquare
+  static simpleFetch(endPoint, method, urlParams) {
+
+  }
 }
