@@ -24,6 +24,17 @@ class App extends Component {
     marker.isOpen = true;
     this.setState({ markers: Object.assign(this.state.markers, marker) });
   }
+  // In this method, the const markers is mapped over to be closed (isOpen = false)
+  // This method is called first in the markerClick method so that open markers are closed
+    // before the one clicked is set to open (isOpen = true)
+  markerClose = () => {
+    const markers = this.state.markers.map(marker => {
+      marker.isOpen = false;
+      return marker;
+    });
+
+    this.setState({ markers: Object.assign(this.state.markers, markers) });
+  };
 
   componentDidMount() {
     FoursquareAPI.search({
