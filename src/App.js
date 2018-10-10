@@ -13,7 +13,16 @@ class App extends Component {
       markers: [],
       center: [],
       zoom: 12
-    }
+    };
+  }
+// This method handles when the marker is clicked
+// isOpen is default to false, but changed to true here
+// The Object.assign() method is used to copy the values of all enumerable own properties
+// from the source object(s) to a target object. It will return the target object
+  // The current marker is assigned the property from the the 'this.state.markers'
+  markerClick = (marker) => {
+    marker.isOpen = true;
+    this.setState({ markers: Object.assign(this.state.markers.marker) })
   }
 
   componentDidMount() {
