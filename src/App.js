@@ -20,9 +20,9 @@ class App extends Component {
 // The Object.assign() method is used to copy the values of all enumerable own properties
 // from the source object(s) to a target object. It will return the target object
   // The current marker is assigned the property from the the 'this.state.markers'
-  markerClick = (marker) => {
+  markerClick = marker => {
     marker.isOpen = true;
-    this.setState({ markers: Object.assign(this.state.markers.marker) })
+    this.setState({ markers: Object.assign(this.state.markers, marker) });
   }
 
   componentDidMount() {
