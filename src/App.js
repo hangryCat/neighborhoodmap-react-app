@@ -54,7 +54,7 @@ class App extends Component {
     // {...this.state} adds the all of the state declared above to the map component
     return (
       <div className="App">
-        <Map {...this.state } />
+        <Map {...this.state } markerClick={this.markerClick} />
       </div>
     );
   }
