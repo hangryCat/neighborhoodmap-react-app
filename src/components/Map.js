@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // Below component code imported from https://tomchentw.github.io/react-google-maps/
 // Used to render Google API Maps
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 const MyMapComponent = withScriptjs(withGoogleMap(props => (
     <GoogleMap
@@ -15,7 +15,13 @@ const MyMapComponent = withScriptjs(withGoogleMap(props => (
         .filter(marker => marker.isVisible)
         // Maps (create) a new array of strings based on what was filtered
         .map((marker, index) => (
-          <Marker key={index} position={{ lat: marker.lat, lng: marker.lng }} />
+          <Marker key={index} position={{ lat: marker.lat, lng: marker.lng }}>
+            {marker.isOpen && (
+              <InfoWindow>
+                <p>Hello InfoWindow!</p>
+              </InfoWindow>
+            )}
+          </Marker>
         ))
       }
     </GoogleMap>
