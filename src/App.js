@@ -26,7 +26,14 @@ class App extends Component {
     this.markerClose();
     marker.isOpen = true;
     this.setState({ markers: Object.assign(this.state.markers, marker) });
-  }
+    const venue = this.state.venues.find(venue => venue.id === marker.id);
+    //This function basically copies the information from this.state.venues to newVenue
+    FoursquareAPI.getVenueDetails(marker.id).then(res => {
+      const newVenue = Object.assign(venue, res.response.venue);
+      this.setState({ venues: Object.assign(this.state.venues, newVenue) });
+      console.log(newVenue);
+    });
+  };
   // In this method, the const markers is mapped over to be closed (isOpen = false)
   // This method is called first in the markerClick method so that open markers are closed
     // before the one clicked is set to open (isOpen = true)
@@ -57,6 +64,7 @@ class App extends Component {
             isOpen: false,
             // All markers should be visible by default
             isVisible: true,
+            id: venue.id
           };
         });
         this.setState({ venues, center, markers });
