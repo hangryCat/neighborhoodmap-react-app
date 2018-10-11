@@ -14,16 +14,25 @@ const MyMapComponent = withScriptjs(withGoogleMap(props => (
         // Filters all visible markers
         .filter(marker => marker.isVisible)
         // Maps (create) a new array of strings based on what was filtered
-        .map((marker, index) => (
-          <Marker key={index} position={{ lat: marker.lat, lng: marker.lng }}
-          onClick={() => props.markerClick(marker)}>
-            {marker.isOpen && (
+        .map((marker, index) => {
+          // Finding markers/venue that have the same id
+          const venueInfo = props.venues.find(venue => venue.id === marker.id);
+          // Adding venue photos and venue name inside the InfoWindow
+          // React.Fragment allows for a list of children w/o adding extra nodes
+          return (
+            <Marker key={index} position={{ lat:marker.lat, lng: marker.lng }}
+            onClick={() => props.markerClick(marker)}>
+            {marker.isOpen && venueInfo.bestPhoto && (
               <InfoWindow>
-                <p>Hello InfoWindow!</p>
+                <React.Fragment>
+                  <h3>{venueInfo.name}</h3>
+                  <img src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`} alt={"Venue"} />
+                </React.Fragment>
               </InfoWindow>
             )}
-          </Marker>
-        ))
+            </Marker>
+          )
+        })
       }
     </GoogleMap>
   ))
