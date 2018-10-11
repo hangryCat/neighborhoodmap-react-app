@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import FoursquareAPI from './API/';
 import Map from './components/Map';
+import SideBar from './components/SideBar';
 
 class App extends Component {
   // Adding constructor and setting the state will make it easier to use/connect
@@ -76,6 +77,7 @@ class App extends Component {
     // {...this.state} adds the all of the state declared above to the map component
     return (
       <div className="App">
+        <SideBar />
         <Map {...this.state } markerClick={this.markerClick} />
       </div>
     );
