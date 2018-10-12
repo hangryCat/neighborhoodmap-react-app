@@ -31,6 +31,10 @@ li.list-item {
   margin: 1vw;
   padding: 1vw;
   cursor: pointer;
+  color: white;
+  background-color: #00b33c;
+  display: flex;
+  align-items: center;
 }
 
 .App-logo {
