@@ -48,7 +48,10 @@ class App extends Component {
   };
 
   listItemClick = venue => {
-    console.log(venue);
+    // This makes sure that the marker.id matches the venue.id that was clicked
+    const marker = this.state.markers.find(marker => marker.id === venue.id);
+    // Calling this function will open the markers when a list item is clicked on
+    this.markerClick(marker);
   };
 
   componentDidMount() {
