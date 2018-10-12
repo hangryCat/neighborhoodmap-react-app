@@ -74,10 +74,10 @@ class App extends Component {
   }
 
   render() {
-    // {...this.state} adds the all of the state declared above to the map component
+    // {...this.state} adds the all of the state declared above components below
     return (
       <div className="App">
-        <SideBar />
+        <SideBar {...this.state} />
         <Map {...this.state } markerClick={this.markerClick} />
       </div>
     );
