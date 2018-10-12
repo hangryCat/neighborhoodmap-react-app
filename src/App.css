@@ -30,6 +30,7 @@ li.list-item {
   font-size: 1em;
   margin: 1vw;
   padding: 1vw;
+  cursor: pointer;
 }
 
 .App-logo {
