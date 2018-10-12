@@ -47,6 +47,10 @@ class App extends Component {
     this.setState({ markers: Object.assign(this.state.markers, markers) });
   };
 
+  listItemClick = venue => {
+    console.log(venue);
+  };
+
   componentDidMount() {
     FoursquareAPI.search({
       near: 'San Diego',
@@ -77,7 +81,7 @@ class App extends Component {
     // {...this.state} adds the all of the state declared above components below
     return (
       <div className="App">
-        <SideBar {...this.state} />
+        <SideBar {...this.state} listItemClick={this.listItemClick} />
         <Map {...this.state } markerClick={this.markerClick} />
       </div>
     );
