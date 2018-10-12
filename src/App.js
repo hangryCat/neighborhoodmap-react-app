@@ -13,7 +13,7 @@ class App extends Component {
       venues: [],
       markers: [],
       center: [],
-      zoom: 12
+      zoom: 15
     };
   }
 // This method handles when the marker is clicked
