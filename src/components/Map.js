@@ -49,6 +49,10 @@ export default class Map extends Component {
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `100%`, width: `70%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
+        center={{
+            lat: parseFloat(this.props.center.lat),
+            lng: parseFloat(this.props.center.lng)
+        }}
       />
     );
   }
