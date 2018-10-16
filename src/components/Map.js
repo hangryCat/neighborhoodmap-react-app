@@ -1,3 +1,4 @@
+/* global google */
 import React, { Component } from 'react';
 // Below component code imported from https://tomchentw.github.io/react-google-maps/
 // Used to render Google API Maps
@@ -14,14 +15,14 @@ const MyMapComponent = withScriptjs(withGoogleMap(props => (
         // Filters all visible markers
         .filter(marker => marker.isVisible)
         // Maps (create) a new array of strings based on what was filtered
-        .map((marker, index) => {
+        .map((marker, index, array) => {
           // Finding markers/venue that have the same id
           const venueInfo = props.venues.find(venue => venue.id === marker.id);
           // Adding venue photos and venue name inside the InfoWindow
           // React.Fragment allows for a list of children w/o adding extra nodes
           return (
             <Marker key={index} position={{ lat:marker.lat, lng: marker.lng }}
-            onClick={() => props.markerClick(marker)}>
+            onClick={() => props.markerClick(marker)} animation={array.length === 1 ? google.maps.Animation.BOUNCE : google.maps.Animation.DROP} >
             {marker.isOpen && venueInfo.bestPhoto && (
               <InfoWindow>
                 <React.Fragment>
