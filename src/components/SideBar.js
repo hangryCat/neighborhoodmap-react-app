@@ -7,9 +7,20 @@ export default class SideBar extends Component {
   constructor() {
     super();
     this.state = {
-      query: ''
+      query: '',
+      venues: []
     };
   }
+  // This method handles the venue list items
+  // It will show list items that are a match depending on what the user input in the
+    // search bar and the venue's name
+  handleVenuesList = () => {
+    if (this.state.query.trim() !== '') {
+      const venues = this.props.venues.filter(venue => venue.name.toLowerCase().includes(this.state.query.toLowerCase()))
+      return venues;
+    }
+    return this.props.venues;
+  };
   // The following method will filter the markers to show only ones that matches
   // the user's input in the search bar
   searchVenuesMarkers = evt => {
@@ -35,7 +46,7 @@ export default class SideBar extends Component {
     return (
       <div className="sidebar">
         <input type={"search"} id={"search"} placeholder={"Search"} onChange={this.searchVenuesMarkers} />
-        <VenueList {...this.props} listItemClick={this.props.listItemClick} />
+        <VenueList {...this.props} venues={this.handleVenuesList()} listItemClick={this.props.listItemClick} />
       </div>
     );
   }
