@@ -10,6 +10,12 @@
   width: 30%;
 }
 
+.sidebar h1 {
+  font-size: calc(12px + 1vw);
+  font-weight: normal;
+  width: 90%;
+}
+
 input#search {
   padding: 1vw;
   width: 100%;

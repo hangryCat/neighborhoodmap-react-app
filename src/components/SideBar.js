@@ -45,6 +45,7 @@ export default class SideBar extends Component {
   render() {
     return (
       <div className="sidebar">
+        <h1>Sushi Restaurants in San Diego, CA</h1>
         <input type={"search"} id={"search"} placeholder={"Search"} onChange={this.searchVenuesMarkers} />
         <VenueList {...this.props} venues={this.handleVenuesList()} listItemClick={this.props.listItemClick} />
       </div>
