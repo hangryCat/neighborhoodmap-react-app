@@ -45,6 +45,8 @@ export default class Map extends Component {
     return (
       <MyMapComponent
         {...this.props}
+        role="application"
+        aria-label="map"
         isMarkerShown
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBfyYKVKGUTbiaDlAPYZjRGRAnexfUeBjU"
         loadingElement={<div style={{ height: `100%` }} />}
