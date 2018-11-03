@@ -3,17 +3,22 @@
   height: 100vh;
   width: 100vw;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
 
 .sidebar {
   width: 30%;
 }
 
-.sidebar h1 {
-  font-size: calc(12px + 1vw);
-  font-weight: normal;
-  width: 90%;
+header {
+  background: #f2f2f2;
+}
+
+header h1 {
+  width: 100vw;
+  font-size: calc(14px + 1vw);
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 input#search {
