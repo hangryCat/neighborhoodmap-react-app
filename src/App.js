@@ -81,7 +81,7 @@ class App extends Component {
         this.setState({ venues, center, markers });
         console.log(results)
       })
-      .catch(() => console.error("Could not load the page due to network issues. Please check your connection and try again."))
+      .catch(() => alert("Could not load the page due to network issues. Please check your connection and try again."))
   }
 
   render() {
