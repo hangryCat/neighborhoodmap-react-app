@@ -6,18 +6,26 @@ This is a single page app where I used ReactJS, Google Maps API, and FourSquare 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## How to Use the App:
-Clone or download the file:
+Clone or download the file: <br />
 https://github.com/hangryCat/neighborhoodmap-react-app.git
 
 You must have NodeJS installed. Refer to Node JS for installation guide.
 
-Navigate to the file and type the following command:
+Navigate to the file and type the following command: <br />
 `npm install`
 
-When installation is complete, type the following command:
+When installation is complete, type the following command: <br />
 `npm start`
 
-The browser will automatically launch the application or click the following link http://localhost:3000/
+The browser will automatically launch the application or click the following link: <br />
+http://localhost:3000/
+
+## Use the App in Production Mode
+Run the following command: <br />
+`npm run build` <br />
+`serve -s build`
+
+And then visit localhost:5000
 
 ## Live 
 https://hangrycat.github.io/neighborhoodmap-react-app/
