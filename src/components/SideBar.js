@@ -44,11 +44,11 @@ export default class SideBar extends Component {
 
   render() {
     return (
-      <div className="sidebar">
-      <label htmlFor="search" tabIndex={1}>
-        <input type={"search"} id={"search"} placeholder={"Search"} onChange={this.searchVenuesMarkers} />
-      </label>
-      <VenueList {...this.props} venues={this.handleVenuesList()} listItemClick={this.props.listItemClick} />
+      <div className="sidebar" role="complementary">
+        <label htmlFor="search" tabIndex={1}>
+          <input role="searchbox" type={"search"} id={"search"} placeholder={"Search"} onChange={this.searchVenuesMarkers} />
+        </label>
+        <VenueList {...this.props} venues={this.handleVenuesList()} listItemClick={this.props.listItemClick} />
       </div>
     );
   }

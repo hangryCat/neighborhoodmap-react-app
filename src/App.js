@@ -87,7 +87,7 @@ class App extends Component {
   render() {
     // {...this.state} adds the all of the state declared above components below
     return (
-      <div className="App">
+      <div className="App" role="application">
         <header role="heading" aria-level="1"><h1>Sushi Restaurants in San Diego, CA</h1></header>
         <SideBar {...this.state} listItemClick={this.listItemClick} />
         <Map {...this.state } markerClick={this.markerClick} />
